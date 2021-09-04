@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador_movel">
+        <activity
+            android:name=".tela_de_simulacao"
+            android:label="@string/title_activity_tela_de_simulacao"
+            android:theme="@style/Theme.Projeto_integrador_movel.NoActionBar"></activity>
+        <activity android:name=".pagina_comite" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
