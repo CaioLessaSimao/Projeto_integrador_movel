@@ -19,12 +19,12 @@ public class TelaSimulacaoActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void onClickAgendaOp(View view) {
+    public void onClickQuestaoOp(View view) {
         Intent i = new Intent(TelaSimulacaoActivity.this,NotaTrabalhoActivity.class);
         startActivity(i);
     }
 
-    public void onClickQuestaoOp(View view) {
+    public void onClickMocaoOp(View view) {
         Intent i = new Intent(TelaSimulacaoActivity.this,NotaTrabalhoActivity.class);
         startActivity(i);
     }

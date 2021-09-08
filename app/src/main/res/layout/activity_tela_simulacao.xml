@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             app:fab_color="#FF8800"
             app:fab_icon="@drawable/ic_baseline_insert_drive_file_24"
-            app:label_text="Email"
+            app:label_text="Notas de trabalho"
             app:label_backgroundColor="#808080"
             app:label_textColor="#FFC0CB"
             android:onClick="onClickNotaTrabalhoOp"/>
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             app:fab_color="#5283F5"
             app:fab_icon="@drawable/ic_baseline_question_answer_24"
-            app:label_text="Event"
+            app:label_text="Questões"
             app:label_backgroundColor="#0000FF"
             android:onClick="onClickQuestaoOp"/>
         <com.nambimobile.widgets.efab.FabOption
@@ -49,9 +49,9 @@
             android:layout_height="wrap_content"
             app:fab_color="#007F00"
             app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_text="Reminder"
+            app:label_text="Moções"
             app:label_backgroundColor="#7F7F00"
-            android:onClick="onClickAgendaOp"
+            android:onClick="onClickMocaoOp"
             />
 
     </com.nambimobile.widgets.efab.ExpandableFabLayout>

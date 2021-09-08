@@ -11,11 +11,11 @@
         android:id="@+id/imageView"
         android:layout_width="107dp"
         android:layout_height="96dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbPagComit"
         app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
     <TextView
@@ -24,11 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="16dp"
         android:text="Nome do comitê"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tbPagComit" />
 
     <TextView
         android:id="@+id/textView6"
@@ -46,12 +46,12 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="Diretor geral: nome do diretor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView8"
@@ -98,10 +98,21 @@
         android:id="@+id/textView4"
         android:layout_width="367dp"
         android:layout_height="280dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/quadrado_dir_ass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbPagComit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
