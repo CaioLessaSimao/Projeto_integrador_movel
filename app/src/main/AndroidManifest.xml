@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador_movel">
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".QuestaoActivity"></activity>
+        <activity android:name=".MocaoActivity" />
+        <activity android:name=".DpoSimulacaoActivity" />
+        <activity android:name=".LstOradoresActivity" />
+        <activity android:name=".AgendaActivity" />
+        <activity android:name=".MessageActivity" />
         <activity android:name=".DpoActivity" />
         <activity android:name=".PaginaComiteActivity" />
         <activity android:name=".NotaTrabalhoActivity" />

@@ -10,23 +10,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 //TUDO CERTO
-public class MessageActivity extends AppCompatActivity {
+public class LstOradoresActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_lst_oradores);
 
-        Toolbar tbMess = findViewById(R.id.tbMess);
-        setSupportActionBar(tbMess);
+        Toolbar tbLstOra = findViewById(R.id.tbLstOra);
+        setSupportActionBar(tbLstOra);
     }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.tbmessage,menu);
+        inflater.inflate(R.menu.tblst,menu);
         return true;
     }
 
@@ -36,8 +34,8 @@ public class MessageActivity extends AppCompatActivity {
         //Isso é um "if"
         switch (item.getItemId()){
             //Isso é a "condição do if"
-            case R.id.btVoltarMes:
-                Intent i = new Intent(MessageActivity.this,PaginaComiteActivity.class);
+            case R.id.btVoltarLst:
+                Intent i = new Intent(LstOradoresActivity.this,TelaSimulacaoActivity.class);
                 startActivity(i);
                 return true;
             default:

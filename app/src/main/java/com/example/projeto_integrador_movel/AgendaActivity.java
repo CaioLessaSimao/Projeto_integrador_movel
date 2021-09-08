@@ -9,16 +9,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-//TUDO CERTO
-public class MessageActivity extends AppCompatActivity {
+
+public class AgendaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_agenda);
 
-        Toolbar tbMess = findViewById(R.id.tbMess);
-        setSupportActionBar(tbMess);
+        Toolbar tbAgenda = findViewById(R.id.tbAgenda);
+        setSupportActionBar(tbAgenda);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.tbmessage,menu);
+        inflater.inflate(R.menu.tbagenda,menu);
         return true;
     }
 
@@ -36,8 +36,8 @@ public class MessageActivity extends AppCompatActivity {
         //Isso é um "if"
         switch (item.getItemId()){
             //Isso é a "condição do if"
-            case R.id.btVoltarMes:
-                Intent i = new Intent(MessageActivity.this,PaginaComiteActivity.class);
+            case R.id.btVoltarAgenda:
+                Intent i = new Intent(AgendaActivity.this,TelaSimulacaoActivity.class);
                 startActivity(i);
                 return true;
             default:
