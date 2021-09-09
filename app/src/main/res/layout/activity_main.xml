@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6880BD"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="PSGD"
+        android:textColor="@color/green_accent"
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Plataforma de Simulação Geopolítica a distância"
+        android:textColor="@color/green_accent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +58,10 @@
         android:ems="10"
         android:hint="Insira aqui o login:"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/gray1"
+        android:textColorHint="@color/gray1"
+        android:textColorLink="@color/gray1"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -74,6 +79,8 @@
         android:ems="10"
         android:hint="Insira  aqui a senha:"
         android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray1"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,11 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
+        android:onClick="onClickPaginaComite"
         android:text="Entrar"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        android:onClick="onClickPaginaComite"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

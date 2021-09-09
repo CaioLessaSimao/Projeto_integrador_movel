@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6880BD"
     tools:context=".TelaSimulacaoActivity">
 
     <com.nambimobile.widgets.efab.ExpandableFabLayout
@@ -24,7 +23,6 @@
             android:layout_marginRight="@dimen/ui_margin_medium"
             android:layout_marginBottom="@dimen/ui_margin_medium"
             app:efab_closingAnticipateTension="0"
-            app:efab_color="#9bff4f"
             app:efab_icon="@drawable/ic_baseline_add_24"
             app:efab_iconAnimationRotationDeg="-225" />
 
@@ -32,55 +30,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickNotaTrabalhoOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_insert_drive_file_24"
-            app:label_backgroundColor="#808080"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="Notas de trabalho"
-            app:label_textColor="#FFC0CB" />
+            app:label_textColor="@color/white" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickQuestaoOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_question_answer_24"
-            app:label_backgroundColor="#0000FF"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="Questões" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickMocaoOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="#7F7F00"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="Moções" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickAgendaOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="#7F7F00"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="Agenda" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickDpoOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="#7F7F00"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="DPOs" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickLstOp"
-            app:fab_color="#007F00"
+            app:fab_color="@color/lighter_green_accent"
             app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="#7F7F00"
+            app:label_backgroundColor="@color/lighter_green_accent"
             app:label_text="Lista de oradores" />
 
     </com.nambimobile.widgets.efab.ExpandableFabLayout>
