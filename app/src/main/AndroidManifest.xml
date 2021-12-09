@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador_movel">
-        <activity android:name=".QuestaoActivity"></activity>
+        <activity android:name=".QuestaoActivity" />
         <activity android:name=".MocaoActivity" />
         <activity android:name=".DpoSimulacaoActivity" />
         <activity android:name=".LstOradoresActivity" />
@@ -19,7 +19,8 @@
         <activity android:name=".PaginaComiteActivity" />
         <activity android:name=".NotaTrabalhoActivity" />
         <activity android:name=".TelaSimulacaoActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
