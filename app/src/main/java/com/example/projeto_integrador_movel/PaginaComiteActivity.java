@@ -3,6 +3,10 @@ package com.example.projeto_integrador_movel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +24,24 @@ public class PaginaComiteActivity extends AppCompatActivity {
 
         Toolbar tbPagComit = findViewById(R.id.tbPagComit);
         setSupportActionBar(tbPagComit);
+
+        Bundle extra = getIntent().getExtras();
+
+        int id = extra.getInt("idDelegacao");
+        String idDelegacao = Integer.toString(id);
+
+        PaginaComiteActivityViewModel vm = new ViewModelProvider(this).get(PaginaComiteActivityViewModel.class);
+
+        vm.setIdDelegacao(idDelegacao);
+
+        LiveData<String> nomeComiteLV = vm.getNomeComiteLV();
+
+        nomeComiteLV.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+            }
+        });
     }
 
     @Override
