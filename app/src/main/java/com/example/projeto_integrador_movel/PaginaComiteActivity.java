@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
 //TUDO CERTO
 public class PaginaComiteActivity extends AppCompatActivity {
 
@@ -25,21 +27,35 @@ public class PaginaComiteActivity extends AppCompatActivity {
         Toolbar tbPagComit = findViewById(R.id.tbPagComit);
         setSupportActionBar(tbPagComit);
 
-        Bundle extra = getIntent().getExtras();
+        //Bundle extra = getIntent().getExtras();
 
-        int id = extra.getInt("idDelegacao");
-        String idDelegacao = Integer.toString(id);
+        Intent intent = getIntent();
+
+        int id = Integer.parseInt(intent.getSerializableExtra("id").toString());
+
+        String idComite = Integer.toString(id);
 
         PaginaComiteActivityViewModel vm = new ViewModelProvider(this).get(PaginaComiteActivityViewModel.class);
 
-        vm.setIdDelegacao(idDelegacao);
+        vm.carregarDados(idComite);
 
         LiveData<String> nomeComiteLV = vm.getNomeComiteLV();
 
         nomeComiteLV.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
+                TextView tvNomeComite = findViewById(R.id.tvNomeComite);
+                tvNomeComite.setText(s);
+            }
+        });
 
+        LiveData<String> temaComiteLV = vm.getTemaComiteLV();
+
+        temaComiteLV.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                TextView tvTemaComite = findViewById(R.id.tvTemaComite);
+                tvTemaComite.setText(s);
             }
         });
     }

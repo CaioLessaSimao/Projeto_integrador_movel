@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                             final int success = jsonObject.getInt("success");
 
                             if(success == 1){
-                                final int idDelegacao = jsonObject.getInt("idDelegacao");
+                                final int idComite = jsonObject.getInt("idComite");
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Config.setPassword(LoginActivity.this, password);
                                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
                                         Intent i = new Intent(LoginActivity.this, PaginaComiteActivity.class);
-                                        i.putExtra("id", idDelegacao);
+                                        i.putExtra("id", idComite);
                                         startActivity(i);
                                     }
                                 });
