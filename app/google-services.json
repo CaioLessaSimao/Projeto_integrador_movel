@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529912296330",
+    "project_id": "psgd-cd591",
+    "storage_bucket": "psgd-cd591.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529912296330:android:26fd7ddf6bdece3e6d0e73",
+        "android_client_info": {
+          "package_name": "com.example.projeto_integrador_movel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529912296330-70qc4g6fopn3c59he8cfoiv8fo73qbfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGqTx0ir1RJFj53RDkz7SF0thYeSD_Ohg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529912296330-70qc4g6fopn3c59he8cfoiv8fo73qbfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
