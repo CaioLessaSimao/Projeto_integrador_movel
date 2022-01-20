@@ -17,9 +17,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class PaginaComiteActivityViewModel extends AndroidViewModel {
-    MutableLiveData<String> nomeComiteLV;
-    MutableLiveData<String> temaComiteLV;
-    MutableLiveData<List<String>> diretores;
+    MutableLiveData<String> nomeComiteLV = new MutableLiveData<>();
+    MutableLiveData<String> temaComiteLV = new MutableLiveData<>();
+    MutableLiveData<List<String>> diretores = new MutableLiveData<>();
 
     public PaginaComiteActivityViewModel(Application application) {
         super(application);

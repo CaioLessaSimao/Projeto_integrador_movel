@@ -27,8 +27,6 @@ public class PaginaComiteActivity extends AppCompatActivity {
         Toolbar tbPagComit = findViewById(R.id.tbPagComit);
         setSupportActionBar(tbPagComit);
 
-        //Bundle extra = getIntent().getExtras();
-
         Intent intent = getIntent();
 
         int id = Integer.parseInt(intent.getSerializableExtra("id").toString());
