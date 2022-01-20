@@ -35,7 +35,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         //Isso é um "if"
         switch (item.getItemId()){
-            //Isso é a "condição do if"
+
             case R.id.btVoltarMes:
                 Intent i = new Intent(MessageActivity.this,PaginaComiteActivity.class);
                 startActivity(i);
