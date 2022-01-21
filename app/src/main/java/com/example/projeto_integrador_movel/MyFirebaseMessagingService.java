@@ -5,6 +5,8 @@ package com.example.projeto_integrador_movel;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -29,6 +31,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             Log.d("FCM", "Message data payload: " + remoteMessage.getData());
+            Notification.
+                    getInstance().
+                    addAction(remoteMessage.getData().get("action"), remoteMessage.getData().get("idcomite"));
+
 
         }
 
@@ -39,6 +45,39 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
+    }
+
+    public static class PsgdAction {
+        public String action;
+        public String idComite;
+    }
+
+    public static class Notification {
+        private static Notification instance;
+        private MutableLiveData<PsgdAction> newAction;
+
+        private Notification() {
+            newAction = new MutableLiveData<>();
+        }
+
+        public static Notification getInstance() {
+            if(instance == null){
+                instance = new Notification();
+            }
+            return instance;
+        }
+
+        public LiveData<PsgdAction> getNewAction() {
+            return newAction;
+        }
+
+        public void addAction(String action, String idComite){
+            PsgdAction psgd = new PsgdAction();
+            psgd.action = action;
+            psgd.idComite = idComite;
+            newAction.postValue(psgd);
+
+        }
     }
 
 

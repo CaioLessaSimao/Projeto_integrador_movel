@@ -24,6 +24,14 @@ public class PaginaComiteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_comite);
 
+        LiveData<MyFirebaseMessagingService.PsgdAction> psgdActionLiveData = MyFirebaseMessagingService.Notification.getInstance().getNewAction();
+        psgdActionLiveData.observe(this, new Observer<MyFirebaseMessagingService.PsgdAction>() {
+            @Override
+            public void onChanged(MyFirebaseMessagingService.PsgdAction psgdAction) {
+                String action = psgdAction.action;
+            }
+        });
+
         Toolbar tbPagComit = findViewById(R.id.tbPagComit);
         setSupportActionBar(tbPagComit);
 
