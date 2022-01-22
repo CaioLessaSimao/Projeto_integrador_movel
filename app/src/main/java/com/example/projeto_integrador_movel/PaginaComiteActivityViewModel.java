@@ -20,7 +20,7 @@ public class PaginaComiteActivityViewModel extends AndroidViewModel {
     MutableLiveData<String> nomeComiteLV = new MutableLiveData<>();
     MutableLiveData<String> temaComiteLV = new MutableLiveData<>();
     MutableLiveData<List<String>> diretores = new MutableLiveData<>();
-
+    boolean sim = false;
     public PaginaComiteActivityViewModel(Application application) {
         super(application);
     }

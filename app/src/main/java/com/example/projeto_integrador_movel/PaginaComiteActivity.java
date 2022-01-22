@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 //TUDO CERTO
@@ -24,13 +25,7 @@ public class PaginaComiteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_comite);
 
-        LiveData<MyFirebaseMessagingService.PsgdAction> psgdActionLiveData = MyFirebaseMessagingService.Notification.getInstance().getNewAction();
-        psgdActionLiveData.observe(this, new Observer<MyFirebaseMessagingService.PsgdAction>() {
-            @Override
-            public void onChanged(MyFirebaseMessagingService.PsgdAction psgdAction) {
-                String action = psgdAction.action;
-            }
-        });
+        Button btnSimulacao = findViewById(R.id.btnSimulacao);
 
         Toolbar tbPagComit = findViewById(R.id.tbPagComit);
         setSupportActionBar(tbPagComit);
@@ -42,6 +37,29 @@ public class PaginaComiteActivity extends AppCompatActivity {
         String idComite = Integer.toString(id);
 
         PaginaComiteActivityViewModel vm = new ViewModelProvider(this).get(PaginaComiteActivityViewModel.class);
+
+        LiveData<MyFirebaseMessagingService.PsgdAction> psgdActionLiveData = MyFirebaseMessagingService.Notification.getInstance().getNewAction();
+        psgdActionLiveData.observe(this, new Observer<MyFirebaseMessagingService.PsgdAction>() {
+            @Override
+            public void onChanged(MyFirebaseMessagingService.PsgdAction psgdAction) {
+                String action = psgdAction.action;
+                String idcomite = psgdAction.idComite;
+                if(action == "iniciar" && idcomite == idComite){
+                    vm.sim = true;
+                }
+                else{
+                    vm.sim = false;
+                }
+
+            }
+        });
+
+        if(vm.sim == false){
+            btnSimulacao.setEnabled(false);
+        }
+        else{
+            btnSimulacao.setEnabled(true);
+        }
 
         vm.carregarDados(idComite);
 
