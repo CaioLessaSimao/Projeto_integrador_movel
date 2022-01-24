@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -44,8 +43,9 @@ public class PaginaComiteActivity extends AppCompatActivity {
             public void onChanged(MyFirebaseMessagingService.PsgdAction psgdAction) {
                 String action = psgdAction.action;
                 String idcomite = psgdAction.idComite;
-                if(action == "iniciar" && idcomite == idComite){
+                if(action.equals("iniciar") && idcomite.equals(idComite)){
                     vm.sim = true;
+                    btnSimulacao.setEnabled(true);
                 }
                 else{
                     vm.sim = false;
@@ -57,9 +57,7 @@ public class PaginaComiteActivity extends AppCompatActivity {
         if(vm.sim == false){
             btnSimulacao.setEnabled(false);
         }
-        else{
-            btnSimulacao.setEnabled(true);
-        }
+
 
         vm.carregarDados(idComite);
 
@@ -80,6 +78,16 @@ public class PaginaComiteActivity extends AppCompatActivity {
             public void onChanged(String s) {
                 TextView tvTemaComite = findViewById(R.id.tvTemaComite);
                 tvTemaComite.setText(s);
+            }
+        });
+
+        LiveData<String> dirGLV = vm.getDiretorGLV();
+
+        dirGLV.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                TextView tvDirG = findViewById(R.id.tvDirG);
+                tvDirG.setText(s);
             }
         });
     }

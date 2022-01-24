@@ -7,11 +7,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,8 +21,10 @@ import java.util.concurrent.Executors;
 public class PaginaComiteActivityViewModel extends AndroidViewModel {
     MutableLiveData<String> nomeComiteLV = new MutableLiveData<>();
     MutableLiveData<String> temaComiteLV = new MutableLiveData<>();
-    MutableLiveData<List<String>> diretores = new MutableLiveData<>();
+    MutableLiveData<String> DiretorGLV = new MutableLiveData<>();
+    MutableLiveData<List<String>> diretoresLV = new MutableLiveData<>();
     boolean sim = false;
+
     public PaginaComiteActivityViewModel(Application application) {
         super(application);
     }
@@ -48,9 +52,17 @@ public class PaginaComiteActivityViewModel extends AndroidViewModel {
                     if(success == 1){
                         String nome = jsonObject.getString("nomeComite");
                         String tema = jsonObject.getString("temaComite");
-
+                        String dirG = jsonObject.getString("dirG");
+                        JSONArray dirAss = jsonObject.getJSONArray("dirAss");
+                        List<String> diretores = new ArrayList<>();
+                        for (int i=0; i<dirAss.length();i++){
+                            JSONObject jDiretor = dirAss.getJSONObject(i);
+                            diretores.add(jDiretor.getString("nome"));
+                        }
                         nomeComiteLV.postValue(nome);
                         temaComiteLV.postValue(tema);
+                        DiretorGLV.postValue(dirG);
+                        diretoresLV.postValue(diretores);
                     }
 
 
@@ -71,7 +83,9 @@ public class PaginaComiteActivityViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<String>> getDiretoresLV() {
-        return diretores;
+        return diretoresLV;
     }
+
+    public MutableLiveData<String> getDiretorGLV() { return DiretorGLV; }
 
 }
