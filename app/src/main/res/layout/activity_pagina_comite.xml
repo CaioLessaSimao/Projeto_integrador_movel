@@ -60,13 +60,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Entrar na simulação"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDirAss"
@@ -88,11 +90,11 @@
         android:id="@+id/tvText"
         android:layout_width="367dp"
         android:layout_height="280dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/quadrado_dir_ass"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemaComite" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbPagComit"
@@ -104,19 +106,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Página do comitê - delegação"
+        app:title="Página do comitê"
         app:titleTextColor="@color/white" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="80dp"
         android:text="Link do blog: www.blog.com.br"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSimulacao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvDirAss" />
 
     <TextView
         android:id="@+id/tvLabelDirG"

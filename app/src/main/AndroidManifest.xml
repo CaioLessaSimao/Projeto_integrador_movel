@@ -17,16 +17,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-
-        <activity android:name=".QuestaoActivity" />
-        <activity android:name=".MocaoActivity" />
-        <activity android:name=".DpoSimulacaoActivity" />
-        <activity android:name=".LstOradoresActivity" />
-        <activity android:name=".AgendaActivity" />
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".DpoActivity" />
         <activity android:name=".PaginaComiteActivity" />
-        <activity android:name=".NotaTrabalhoActivity" />
         <activity android:name=".TelaSimulacaoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,6 +1,7 @@
 package com.example.projeto_integrador_movel;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,8 +25,12 @@ import java.util.List;
 //TUDO CERTO
 public class PaginaComiteActivity extends AppCompatActivity {
 
+
+    static int SIMULACAO_REQUEST = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_comite);
 
@@ -38,6 +44,7 @@ public class PaginaComiteActivity extends AppCompatActivity {
         int id = Integer.parseInt(intent.getSerializableExtra("id").toString());
 
         String idComite = Integer.toString(id);
+
 
         PaginaComiteActivityViewModel vm = new ViewModelProvider(this).get(PaginaComiteActivityViewModel.class);
 
@@ -115,7 +122,7 @@ public class PaginaComiteActivity extends AppCompatActivity {
                 Intent i = new Intent(PaginaComiteActivity.this, TelaSimulacaoActivity.class);
                 i.putExtra("nomeComite", nomeComiteLV.getValue());
                 i.putExtra("temaComite", temaComiteLV.getValue());
-                startActivity(i);
+                startActivityForResult(i, SIMULACAO_REQUEST);
             }
         });
     }
@@ -129,21 +136,15 @@ public class PaginaComiteActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        //Isso é um "if"
-        switch (item.getItemId()){
-            //Isso é a "condição do if"
-            case R.id.dpo:
-                Intent i = new Intent(PaginaComiteActivity.this,DpoActivity.class);
-                startActivity(i);
-                return true;
-            case R.id.lstMes:
-                Intent j = new Intent(PaginaComiteActivity.this,MessageActivity.class);
-                startActivity(j);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == SIMULACAO_REQUEST){
+            if(resultCode == Activity.RESULT_OK){
+                PaginaComiteActivityViewModel vm = new ViewModelProvider(this).get(PaginaComiteActivityViewModel.class);
+                vm.sim = false;
+                Button btnSimulacao = findViewById(R.id.btnSimulacao);
+                btnSimulacao.setEnabled(false);
+            }
         }
     }
 }

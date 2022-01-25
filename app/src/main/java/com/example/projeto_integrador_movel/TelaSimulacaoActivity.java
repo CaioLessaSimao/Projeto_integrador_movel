@@ -7,10 +7,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,6 +104,16 @@ public class TelaSimulacaoActivity extends AppCompatActivity {
                         vm.lstOLV.postValue(oradores);
                         vm.proximoLV.postValue(proximo);
                     }
+                }
+
+                else if(action.equals("finalizar")){
+                    vm.proximoLV.postValue("");
+                    vm.lstOLV.postValue(new ArrayList<>());
+                    vm.temaComiteLV.postValue("");
+                    vm.nomeComiteLV.postValue("");
+                    Toast.makeText(TelaSimulacaoActivity.this, "Simulação Finalizada.", Toast.LENGTH_LONG).show();
+                    setResult(Activity.RESULT_OK, i);
+                    finish();;
                 }
             }
         });
