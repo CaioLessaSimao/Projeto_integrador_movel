@@ -6,83 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".TelaSimulacaoActivity">
 
-    <com.nambimobile.widgets.efab.ExpandableFabLayout
-        android:id="@+id/expandable_fab_layout"
-        android:layout_width="254dp"
-        android:layout_height="497dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.nambimobile.widgets.efab.ExpandableFab
-            android:id="@+id/expandable_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/ui_margin_medium"
-            android:layout_marginRight="@dimen/ui_margin_medium"
-            android:layout_marginBottom="@dimen/ui_margin_medium"
-            app:efab_closingAnticipateTension="0"
-            app:efab_icon="@drawable/ic_baseline_add_24"
-            app:efab_iconAnimationRotationDeg="-225" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickNotaTrabalhoOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_insert_drive_file_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="Notas de trabalho"
-            app:label_textColor="@color/white" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickQuestaoOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_question_answer_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="Questões" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickMocaoOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="Moções" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickAgendaOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="Agenda" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickDpoOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="DPOs" />
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickLstOp"
-            app:fab_color="@color/lighter_green_accent"
-            app:fab_icon="@drawable/ic_baseline_calendar_today_24"
-            app:label_backgroundColor="@color/lighter_green_accent"
-            app:label_text="Lista de oradores" />
-
-    </com.nambimobile.widgets.efab.ExpandableFabLayout>
-
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
@@ -92,18 +15,6 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:text="01:00"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,37 +30,45 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="1ºdia/1º seção"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="128dp"
         android:text="Discursando agora: nome da delegação"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Próximo a discursar: nome da delegação"
-        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLstO"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelLst"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <TextView
+        android:id="@+id/tvLabelLst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Lista de Oradores:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

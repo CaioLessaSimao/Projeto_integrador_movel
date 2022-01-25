@@ -33,7 +33,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d("FCM", "Message data payload: " + remoteMessage.getData());
             Notification.
                     getInstance().
-                    addAction(remoteMessage.getData().get("action"), remoteMessage.getData().get("idcomite"));
+                    addAction(remoteMessage.getData().get("action"), remoteMessage.getData().get("idcomite"), remoteMessage.getData().get("nome"));
 
 
         }
@@ -50,6 +50,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public static class PsgdAction {
         public String action;
         public String idComite;
+        public String nomeDel;
     }
 
     public static class Notification {
@@ -71,14 +72,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             return newAction;
         }
 
-        public void addAction(String action, String idComite){
+        public void addAction(String action, String idComite, String nomeDel){
             PsgdAction psgd = new PsgdAction();
             psgd.action = action;
             psgd.idComite = idComite;
+            psgd.nomeDel = nomeDel;
             newAction.postValue(psgd);
 
         }
     }
-
 
 }

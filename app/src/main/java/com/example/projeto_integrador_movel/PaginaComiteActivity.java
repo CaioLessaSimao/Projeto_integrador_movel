@@ -107,6 +107,17 @@ public class PaginaComiteActivity extends AppCompatActivity {
                 rvDirAss.setAdapter(comiteAdapter);
             }
         });
+
+        Button entrarSim = findViewById(R.id.btnSimulacao);
+        entrarSim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaginaComiteActivity.this, TelaSimulacaoActivity.class);
+                i.putExtra("nomeComite", nomeComiteLV.getValue());
+                i.putExtra("temaComite", temaComiteLV.getValue());
+                startActivity(i);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -115,11 +126,6 @@ public class PaginaComiteActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.tbpagcomit,menu);
         return true;
-    }
-
-    public void onClickEntrar(View view) {
-        Intent i = new Intent(PaginaComiteActivity.this,TelaSimulacaoActivity.class);
-        startActivity(i);
     }
 
     @Override
