@@ -32,11 +32,15 @@
         android:id="@+id/tvDirG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Diretor geral: nome do diretor"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:text="nome do diretor"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvText"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelDirG"
         app:layout_constraintTop_toTopOf="@+id/tvText" />
 
     <TextView
@@ -66,17 +70,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDir_Ass"
-        android:layout_width="291dp"
-        android:layout_height="176dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:id="@+id/rvDirAss"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvText"
         app:layout_constraintEnd_toEndOf="@+id/tvText"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="@+id/tvText"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -84,10 +89,11 @@
         android:id="@+id/tvText"
         android:layout_width="367dp"
         android:layout_height="280dp"
+        android:layout_marginBottom="68dp"
         android:background="@drawable/quadrado_dir_ass"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbPagComit"
@@ -106,11 +112,23 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="Link do blog: www.blog.com.br"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSimulacao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvText" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLabelDirG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Diretor geral:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvText"
+        app:layout_constraintTop_toTopOf="@+id/tvText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,6 +86,6 @@ public class PaginaComiteActivityViewModel extends AndroidViewModel {
         return diretoresLV;
     }
 
-    public MutableLiveData<String> getDiretorGLV() { return DiretorGLV; }
+    public LiveData<String> getDiretorGLV() { return DiretorGLV; }
 
 }

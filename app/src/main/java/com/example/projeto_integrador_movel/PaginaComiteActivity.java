@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.List;
 
 //TUDO CERTO
 public class PaginaComiteActivity extends AppCompatActivity {
@@ -43,18 +47,17 @@ public class PaginaComiteActivity extends AppCompatActivity {
             public void onChanged(MyFirebaseMessagingService.PsgdAction psgdAction) {
                 String action = psgdAction.action;
                 String idcomite = psgdAction.idComite;
-                if(action.equals("iniciar") && idcomite.equals(idComite)){
+                if (action.equals("iniciar") && idcomite.equals(idComite)) {
                     vm.sim = true;
                     btnSimulacao.setEnabled(true);
-                }
-                else{
+                } else {
                     vm.sim = false;
                 }
 
             }
         });
 
-        if(vm.sim == false){
+        if (vm.sim == false) {
             btnSimulacao.setEnabled(false);
         }
 
@@ -90,8 +93,21 @@ public class PaginaComiteActivity extends AppCompatActivity {
                 tvDirG.setText(s);
             }
         });
-    }
+        LiveData<List<String>> diretoresLV = vm.getDiretoresLV();
 
+        RecyclerView rvDirAss = findViewById(R.id.rvDirAss);
+        rvDirAss.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        rvDirAss.setLayoutManager(layoutManager);
+        diretoresLV.observe(this, new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> strings) {
+                ComiteAdapter comiteAdapter = new ComiteAdapter(PaginaComiteActivity.this, strings);
+                rvDirAss.setAdapter(comiteAdapter);
+            }
+        });
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
